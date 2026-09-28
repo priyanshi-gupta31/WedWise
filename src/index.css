@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-canvas: #FFF7ED;
+    --bg-paper: #FFFFFF;
+    --text-ink: #29202A;
+    --text-muted: #615163;
+    --border-hairline: #F1E4D6;
+    --accent-wine: #641F35;
+    --accent-coral: #E86A5B;
+    --accent-peach: #F6C6B6;
+    --accent-sage: #87957D;
+    --accent-champagne: #D6B36A;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-ink);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif, .wedding-title {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8D9C8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D6B36A;
+}
+
+/* Hide number input spinners */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.02); }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(0.5deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 106, 91, 0.4); }
+  50% { box-shadow: 0 0 0 16px rgba(232, 106, 91, 0); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes archExpand {
+  from { transform: scale(0.96); opacity: 0.8; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 4s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 30s linear infinite;
+}
+
+/* Arch mask utilities */
+.clip-arch {
+  border-radius: 120px 120px 24px 24px;
+}
+
+.clip-arch-top {
+  border-radius: 9999px 9999px 0 0;
+}
+
+/* Pattern textures */
+.bg-mandala-texture {
+  background-color: #FFF7ED;
+  background-image: radial-gradient(#F1E4D6 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-wine-mesh {
+  background: radial-gradient(circle at 10% 20%, #852C47 0%, #641F35 60%, #4A1425 100%);
+}
+
+.bg-coral-mesh {
+  background: radial-gradient(circle at top right, #F28B7E, #E86A5B 70%, #C85243 100%);
+}
+
+/* 3D Transform Utilities for Cinematic Invitation */
+.perspective-800 {
+  perspective: 800px;
+}
+.perspective-1000 {
+  perspective: 1000px;
+}
+.perspective-1200 {
+  perspective: 1200px;
+}
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* 3D Depth Shadows */
+.shadow-3d-card {
+  box-shadow: 
+    0 20px 40px -15px rgba(10, 8, 18, 0.6),
+    0 0 50px -10px rgba(232, 152, 56, 0.15),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.shadow-seal-3d {
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.5),
+    0 0 20px 2px rgba(232, 152, 56, 0.25),
+    inset 0 2px 4px rgba(255, 247, 237, 0.3),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow,
+  .animate-float-gentle,
+  .animate-pulse-glow,
+  .animate-pulse-subtle {
+    animation: none !important;
+  }
+}
+
+/* Safe Area Insets for Mobile Navigation & PWA Viewport */
+.safe-bottom {
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* Defensive protection: suppress third-party injected overlays obscuring mobile navigation */
+iframe[src*="netlify"],
+iframe[id*="netlify"],
+div[id*="netlify"],
+#netlify-badge,
+.netlify-badge {
+  display: none !important;
+}
+
