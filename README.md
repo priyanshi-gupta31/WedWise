@@ -378,3 +378,28 @@ The current version includes:
 ## 📄 License
 
 This project is currently intended as a portfolio/academic project.
+## 📸 Product Screenshots
+
+### 🏠 Wedding Command Center
+
+![WedWise Dashboard](./public/dashboard.png)
+
+### 💰 Wedding Money & Cash Flow
+
+![Money Management](./public/money.png)
+
+### 📊 Budget Intelligence
+
+![Budget Intelligence](./public/budget.png)
+
+### 👨‍👩‍👧‍👦 Shared Family Workspace
+
+![Family Collaboration](./public/family.png)
+
+### 🤖 Ask WedWise AI
+
+![Ask WedWise AI](./public/ai.png)
+
+### 📅 Wedding Events & Timeline
+
+![Wedding Events](./public/events.png)
